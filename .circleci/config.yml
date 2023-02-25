@@ -3,8 +3,7 @@ jobs:
   build:
     environment:
       IMAGE_NAME: rpozo/python-selenium-testing
-    docker:
-      - image: circleci/buildpack-deps:stretch
+    executor: docker-publisher
     steps:
       - checkout
       - setup_remote_docker
@@ -14,8 +13,7 @@ jobs:
   publish-latest:
     environment:
       IMAGE_NAME: rpozo/python-selenium-testing
-    docker:
-      - image: circleci/buildpack-deps:stretch
+    executor: docker-publisher
     steps:
       - setup_remote_docker
       - run:
