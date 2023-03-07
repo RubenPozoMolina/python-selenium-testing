@@ -1,5 +1,5 @@
 FROM debian:buster-slim
-RUN apt-get update && apt-get install -y curl unzip python3 python3-pip python3-venv postgresql-client  
+RUN apt-get update && apt-get install -y curl unzip python3 python3-pip python3-venv postgresql-client libpq-devel  
 
 # Chrome
 RUN curl -sS 'https://dl-ssl.google.com/linux/linux_signing_key.pub' | apt-key add - && \
